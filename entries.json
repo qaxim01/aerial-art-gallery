@@ -8,15 +8,6 @@
       "pointsOfInterest": {
         "0": "If you can read this, the video metadata works!"
       }
-    },
-    {
-      "id": "test-image-1",
-      "accessibilityLabel": "The Great Wave off Kanagawa",
-      "type": "image",
-      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/The_Great_Wave_off_Kanagawa.jpg",
-      "pointsOfInterest": {
-        "0": "Katsushika Hokusai, 1831"
-      }
     }
   ]
 }
