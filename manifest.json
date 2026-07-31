@@ -1,0 +1,11 @@
+{
+  "name": "Open Ambient Gallery",
+  "description": "Curated museum artworks for Aerial Views.",
+  "version": 1,
+  "assets": [
+    {
+      "url": "entries.json",
+      "accessibilityLabel": "Classic Masterpieces"
+    }
+  ]
+}
