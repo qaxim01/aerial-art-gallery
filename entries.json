@@ -1,10 +1,10 @@
 {
   "assets": [
     {
-      "id": "secure-video-test",
-      "accessibilityLabel": "Secure Video Test",
+      "id": "apple-video-test",
+      "accessibilityLabel": "Los Angeles",
       "type": "video",
-      "url-1080-H264": "https://www.w3schools.com/html/mov_bbb.mp4",
+      "url-1080-SDR": "https://sylvan.apple.com/Videos/comp_LA_A009_C009_v04_SDR_PS_FINAL_20180725_SDR_1080p.mp4",
       "pointsOfInterest": {
         "0": "Vincent van Gogh, 1889 - Overlay Test Successful!"
       }
