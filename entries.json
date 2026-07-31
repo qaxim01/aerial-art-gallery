@@ -1,0 +1,50 @@
+[
+  {
+    "id": "hokusai-great-wave",
+    "name": "The Great Wave off Kanagawa",
+    "description": "Katsushika Hokusai\n1831\nMetropolitan Museum of Art",
+    "assets": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/The_Great_Wave_off_Kanagawa.jpg",
+        "accessibilityLabel": "The Great Wave off Kanagawa",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "id": "van-gogh-starry-night",
+    "name": "The Starry Night",
+    "description": "Vincent van Gogh\n1889\nMuseum of Modern Art",
+    "assets": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
+        "accessibilityLabel": "The Starry Night",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "id": "monet-water-lilies",
+    "name": "Water Lilies",
+    "description": "Claude Monet\n1906\nArt Institute of Chicago",
+    "assets": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Claude_Monet_-_Water_Lilies_-_Google_Art_Project.jpg",
+        "accessibilityLabel": "Water Lilies",
+        "type": "image"
+      }
+    ]
+  },
+  {
+    "id": "vermeer-pearl-earring",
+    "name": "Girl with a Pearl Earring",
+    "description": "Johannes Vermeer\n1665\nMauritshuis",
+    "assets": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/1665_Girl_with_a_Pearl_Earring.jpg",
+        "accessibilityLabel": "Girl with a Pearl Earring",
+        "type": "image"
+      }
+    ]
+  }
+]
