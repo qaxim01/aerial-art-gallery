@@ -1,11 +1,9 @@
 {
   "name": "Open Ambient Gallery",
-  "description": "Curated museum artworks for Aerial Views.",
-  "version": 1,
-  "assets": [
+  "providers": [
     {
-      "url": "entries.json",
-      "accessibilityLabel": "Classic Masterpieces"
+      "name": "Classic Masterpieces",
+      "url": "https://qaxim01.github.io/aerial-art-gallery/entries.json"
     }
   ]
 }
