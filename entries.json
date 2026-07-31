@@ -1,50 +1,40 @@
-[
-  {
-    "id": "hokusai-great-wave",
-    "name": "The Great Wave off Kanagawa",
-    "description": "Katsushika Hokusai\n1831\nMetropolitan Museum of Art",
-    "assets": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/The_Great_Wave_off_Kanagawa.jpg",
-        "accessibilityLabel": "The Great Wave off Kanagawa",
-        "type": "image"
+{
+  "assets": [
+    {
+      "id": "hokusai-great-wave",
+      "accessibilityLabel": "The Great Wave off Kanagawa",
+      "type": "photo",
+      "url-1080-SDR": "https://upload.wikimedia.org/wikipedia/commons/0/0a/The_Great_Wave_off_Kanagawa.jpg",
+      "pointsOfInterest": {
+        "0": "Katsushika Hokusai, 1831"
       }
-    ]
-  },
-  {
-    "id": "van-gogh-starry-night",
-    "name": "The Starry Night",
-    "description": "Vincent van Gogh\n1889\nMuseum of Modern Art",
-    "assets": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
-        "accessibilityLabel": "The Starry Night",
-        "type": "image"
+    },
+    {
+      "id": "van-gogh-starry-night",
+      "accessibilityLabel": "The Starry Night",
+      "type": "photo",
+      "url-1080-SDR": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
+      "pointsOfInterest": {
+        "0": "Vincent van Gogh, 1889"
       }
-    ]
-  },
-  {
-    "id": "monet-water-lilies",
-    "name": "Water Lilies",
-    "description": "Claude Monet\n1906\nArt Institute of Chicago",
-    "assets": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Claude_Monet_-_Water_Lilies_-_Google_Art_Project.jpg",
-        "accessibilityLabel": "Water Lilies",
-        "type": "image"
+    },
+    {
+      "id": "monet-water-lilies",
+      "accessibilityLabel": "Water Lilies",
+      "type": "photo",
+      "url-1080-SDR": "https://upload.wikimedia.org/wikipedia/commons/3/33/Claude_Monet_-_Water_Lilies_-_Google_Art_Project.jpg",
+      "pointsOfInterest": {
+        "0": "Claude Monet, 1906"
       }
-    ]
-  },
-  {
-    "id": "vermeer-pearl-earring",
-    "name": "Girl with a Pearl Earring",
-    "description": "Johannes Vermeer\n1665\nMauritshuis",
-    "assets": [
-      {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/1665_Girl_with_a_Pearl_Earring.jpg",
-        "accessibilityLabel": "Girl with a Pearl Earring",
-        "type": "image"
+    },
+    {
+      "id": "vermeer-pearl-earring",
+      "accessibilityLabel": "Girl with a Pearl Earring",
+      "type": "photo",
+      "url-1080-SDR": "https://upload.wikimedia.org/wikipedia/commons/0/0f/1665_Girl_with_a_Pearl_Earring.jpg",
+      "pointsOfInterest": {
+        "0": "Johannes Vermeer, 1665"
       }
-    ]
-  }
-]
+    }
+  ]
+}
