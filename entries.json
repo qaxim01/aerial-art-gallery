@@ -1,39 +1,21 @@
 {
   "assets": [
     {
-      "id": "hokusai-great-wave",
+      "id": "test-video-1",
+      "accessibilityLabel": "Video Overlay Test",
+      "type": "video",
+      "url-1080-H264": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      "pointsOfInterest": {
+        "0": "If you can read this, the video metadata works!"
+      }
+    },
+    {
+      "id": "test-image-1",
       "accessibilityLabel": "The Great Wave off Kanagawa",
-      "type": "photo",
-      "url-1080-SDR": "https://upload.wikimedia.org/wikipedia/commons/0/0a/The_Great_Wave_off_Kanagawa.jpg",
+      "type": "image",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/The_Great_Wave_off_Kanagawa.jpg",
       "pointsOfInterest": {
         "0": "Katsushika Hokusai, 1831"
-      }
-    },
-    {
-      "id": "van-gogh-starry-night",
-      "accessibilityLabel": "The Starry Night",
-      "type": "photo",
-      "url-1080-SDR": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
-      "pointsOfInterest": {
-        "0": "Vincent van Gogh, 1889"
-      }
-    },
-    {
-      "id": "monet-water-lilies",
-      "accessibilityLabel": "Water Lilies",
-      "type": "photo",
-      "url-1080-SDR": "https://upload.wikimedia.org/wikipedia/commons/3/33/Claude_Monet_-_Water_Lilies_-_Google_Art_Project.jpg",
-      "pointsOfInterest": {
-        "0": "Claude Monet, 1906"
-      }
-    },
-    {
-      "id": "vermeer-pearl-earring",
-      "accessibilityLabel": "Girl with a Pearl Earring",
-      "type": "photo",
-      "url-1080-SDR": "https://upload.wikimedia.org/wikipedia/commons/0/0f/1665_Girl_with_a_Pearl_Earring.jpg",
-      "pointsOfInterest": {
-        "0": "Johannes Vermeer, 1665"
       }
     }
   ]
