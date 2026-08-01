@@ -20,10 +20,11 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install Dependencies
-        run: |
-          sudo apt-get update && sudo apt-get install -y ffmpeg fonts-freefont-ttf
-          pip install requests pillow
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install Python Requests
+        run: pip install requests
 
       - name: Execute Generator Script
         run: python generate_gallery.py
@@ -33,4 +34,4 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add videos/
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-generated updated ambient videos" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-generated beautifully cropped ambient videos" && git push)
