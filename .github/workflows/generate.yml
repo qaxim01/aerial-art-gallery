@@ -5,6 +5,9 @@ on:
     - cron: '0 3 * * *' # Runs automatically every night at 3:00 AM UTC
   workflow_dispatch: # Allows manual trigger from GitHub Web UI anytime
 
+permissions:
+  contents: write # Explicitly grants write access to commit new videos
+
 jobs:
   build:
     runs-on: ubuntu-latest
