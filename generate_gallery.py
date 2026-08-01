@@ -7,26 +7,15 @@ from PIL import Image, ImageDraw, ImageFont
 NUM_ARTWORKS = 15
 API_URL = f"https://api.artic.edu/api/v1/artworks/search?query[term][is_public_domain]=true&limit={NUM_ARTWORKS}&fields=id,title,artist_title,date_display,image_id"
 OUTPUT_DIR = "videos"
-FONT_PATH = "Roboto-Regular.ttf"
-# Updated to the correct Google Fonts repository path
-FONT_URL = "https://github.com/google/fonts/raw/main/ofl/roboto/Roboto-Regular.ttf"
+
+# Point directly to the standard Ubuntu system font
+FONT_PATH = "/usr/share/fonts/truetype/freefont/FreeSerif.ttf"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 print("Starting generation process...")
 
-# 1. Download Font
-if not os.path.exists(FONT_PATH):
-    print("Downloading font...")
-    r = requests.get(FONT_URL)
-    if r.status_code == 200:
-        with open(FONT_PATH, "wb") as f:
-            f.write(r.content)
-    else:
-        print(f"CRITICAL ERROR: Could not download font. Status code: {r.status_code}")
-        exit(1)
-
-# 2. Fetch Artworks Metadata
+# 1. Fetch Artworks Metadata
 print(f"Fetching metadata from: {API_URL}")
 response = requests.get(API_URL)
 if response.status_code != 200:
@@ -36,7 +25,7 @@ if response.status_code != 200:
 artworks = response.json().get("data", [])
 print(f"Successfully found {len(artworks)} artworks.")
 
-# 3. Process Each Artwork
+# 2. Process Each Artwork
 for artwork in artworks:
     image_id = artwork.get("image_id")
     title = artwork.get("title", "Untitled")
@@ -54,11 +43,10 @@ for artwork in artworks:
         print(f"Skipping '{title}': Video already exists.")
         continue
 
-    # Updated to the official API recommended sizing (843 width)
+    # Using the official 843px width
     image_url = f"https://www.artic.edu/iiif/2/{image_id}/full/843,/0/default.jpg"
     print(f"Downloading: {title} by {artist}")
 
-    # Download source image
     img_res = requests.get(image_url)
     if img_res.status_code != 200:
         print(f"  -> Failed to download image from IIIF server. Status: {img_res.status_code}")
@@ -80,8 +68,14 @@ for artwork in artworks:
         img = Image.alpha_composite(img, overlay).convert("RGB")
         draw = ImageDraw.Draw(img)
 
-        font_title = ImageFont.truetype(FONT_PATH, size=int(height * 0.038))
-        font_sub = ImageFont.truetype(FONT_PATH, size=int(height * 0.026))
+        # Use the system font
+        try:
+            font_title = ImageFont.truetype(FONT_PATH, size=int(height * 0.038))
+            font_sub = ImageFont.truetype(FONT_PATH, size=int(height * 0.026))
+        except IOError:
+            print("  -> Font missing, falling back to default.")
+            font_title = ImageFont.load_default()
+            font_sub = ImageFont.load_default()
 
         padding_x = int(width * 0.04)
         y_title = height - bar_height + int(bar_height * 0.2)
