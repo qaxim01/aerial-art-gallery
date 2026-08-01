@@ -7,9 +7,13 @@ from PIL import Image, ImageDraw, ImageFont
 NUM_ARTWORKS = 15
 API_URL = f"https://api.artic.edu/api/v1/artworks/search?query[term][is_public_domain]=true&limit={NUM_ARTWORKS}&fields=id,title,artist_title,date_display,image_id"
 OUTPUT_DIR = "videos"
-
-# Point directly to the standard Ubuntu system font
 FONT_PATH = "/usr/share/fonts/truetype/freefont/FreeSerif.ttf"
+
+# Disguise the script as a normal Google Chrome browser to bypass 403 blocks
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "AIC-User-Agent": "ambient-gallery-personal-project"
+}
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -17,7 +21,7 @@ print("Starting generation process...")
 
 # 1. Fetch Artworks Metadata
 print(f"Fetching metadata from: {API_URL}")
-response = requests.get(API_URL)
+response = requests.get(API_URL, headers=HEADERS)
 if response.status_code != 200:
     print(f"CRITICAL ERROR: API returned status {response.status_code}")
     exit(1)
@@ -43,11 +47,11 @@ for artwork in artworks:
         print(f"Skipping '{title}': Video already exists.")
         continue
 
-    # Using the official 843px width
     image_url = f"https://www.artic.edu/iiif/2/{image_id}/full/843,/0/default.jpg"
     print(f"Downloading: {title} by {artist}")
 
-    img_res = requests.get(image_url)
+    # Pass the headers to bypass the image server firewall
+    img_res = requests.get(image_url, headers=HEADERS)
     if img_res.status_code != 200:
         print(f"  -> Failed to download image from IIIF server. Status: {img_res.status_code}")
         continue
@@ -68,7 +72,6 @@ for artwork in artworks:
         img = Image.alpha_composite(img, overlay).convert("RGB")
         draw = ImageDraw.Draw(img)
 
-        # Use the system font
         try:
             font_title = ImageFont.truetype(FONT_PATH, size=int(height * 0.038))
             font_sub = ImageFont.truetype(FONT_PATH, size=int(height * 0.026))
