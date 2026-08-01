@@ -2,11 +2,11 @@ name: Generate Ambient Gallery Videos
 
 on:
   schedule:
-    - cron: '0 3 * * *' # Runs automatically every night at 3:00 AM UTC
-  workflow_dispatch: # Allows manual trigger from GitHub Web UI anytime
+    - cron: '0 3 * * *' 
+  workflow_dispatch: 
 
 permissions:
-  contents: write # Explicitly grants write access to commit new videos
+  contents: write 
 
 jobs:
   build:
@@ -22,7 +22,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          sudo apt-get update && sudo apt-get install -y ffmpeg
+          sudo apt-get update && sudo apt-get install -y ffmpeg fonts-freefont-ttf
           pip install requests pillow
 
       - name: Execute Generator Script
